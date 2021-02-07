@@ -34,7 +34,7 @@ export default function DataForm() {
     setResponse({ formSave: true });
 
     try {
-      const result = await fetch('http://localhost:3333/budget', {
+      const result = await fetch(process.env.APP_URL, {
         method: 'POST',
         body: JSON.stringify(budget),
         headers: {'Content-Type': 'application/json'}
