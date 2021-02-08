@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import api from '../../services/api';
+
 import {
   Form,
   FormGroup,
@@ -34,7 +36,7 @@ export default function DataForm() {
     setResponse({ formSave: true });
 
     try {
-      const result = await fetch(process.env.APP_URL, {
+      const result = await fetch(process.env.NEXT_PUBLIC_API_URL, {
         method: 'POST',
         body: JSON.stringify(budget),
         headers: {'Content-Type': 'application/json'}
