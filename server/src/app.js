@@ -8,16 +8,7 @@ const routes = require('./routes');
 
 const app = express();
 
-app.use((request, response, next) => {
-  response.header("Access-Control-Allow-Origin", "*");
-  response.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
-  response.header(
-    "Access-Control-Allow-Headers", "X-PINGOTHER, Content-Type, Authorization"
-  );
-
-  app.use(cors());
-  next();
-});
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
